@@ -1,0 +1,25 @@
+name: Octopy-Energy
+
+channels:
+  - conda-forge
+  - anaconda-fusion
+  - defaults
+
+dependencies:
+  # core
+  - python=3.7
+  - jupyterlab
+  - pip
+  - pandas
+  - numpy
+  - seaborn
+  - matplotlib
+  
+  # devops
+  - python-dotenv
+
+  # pip
+  - pip:
+      - -e .
+      - ipypb
+      - feautils
