@@ -14,12 +14,17 @@ dependencies:
   - numpy
   - seaborn
   - matplotlib
+  - twine
   
-  # devops
+  # devops/docs
   - python-dotenv
+  - mkdocs-material
+  - tabulate
 
   # pip
   - pip:
       - -e .
       - ipypb
       - feautils
+      - mkdocs-material-extensions
+      - mkdocstrings

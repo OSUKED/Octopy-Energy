@@ -8,10 +8,8 @@ The first step to getting running with the library is to install it through pip.
 ```python
 ! pip install octopyenergy
 ```
-
-    Requirement already satisfied: octopyenergy in c:\users\ayrto\desktop\phd\data\octopy-energy (0.0.1)
+    Requirement already satisfied: octopyenergy in c:\users\user\path\to\octopy-energy (0.0.1)
     
-
 <br>
 
 Once installed `octopyenergy` can be imported into your scripts.
@@ -26,21 +24,16 @@ from octopyenergy.api import DownloadManager
 
 ### User Inputs
 
-We now need to assign values for our account/meter details, add your own `.env` or replace with standard string assignments.
+We now need to assign values for our account/meter details.
 
 N.b. we recommend that you store your account details in a `.env` file and then use the `dotenv` library to set them as environment variables, which can in turn be picked up by `os` and assigned to local variables.
 
 
 ```python
-import os
-import dotenv
-
-dotenv.load_dotenv('../.env')
-
-octopus_account = os.environ['OCTOPUS_ACCOUNT']
-octopus_api_key = os.environ['OCTOPUS_API_KEY']
-meter_mpan = os.environ['METER_MPAN']
-meter_serial = os.environ['METER_SERIAL']
+octopus_account = 'your_octopus_account'
+octopus_api_key = 'your_octopus_api_key'
+meter_mpan = 'your_meter_mpan'
+meter_serial = 'your_meter_serial'
 ```
 
 <br>
@@ -58,16 +51,10 @@ download_manager = DownloadManager(meter_mpan=meter_mpan,
 download_manager
 ```
 
-
-
-
     Welcome to the octopyenergy DownloadManager! For more information please read the documentation at https://github.com/AyrtonB/Octopy-Energy.
     
     The following API end-points are available: 
     retrieve_products, retrieve_product, retrieve_tariff_charges, retrieve_meter_point, retrieve_electricity_consumption, retrieve_gas_consumption, retrieve_gsps
-    
-
-
 
 <br>
 
@@ -80,7 +67,7 @@ help(download_manager.retrieve_meter_point)
 
     Help on function retrieve_meter_point:
     
-    retrieve_meter_point(meter_mpan='1012627213444', **kwargs)
+    retrieve_meter_point(meter_mpan='your_meter_mpan', **kwargs)
         Retrieves a meter-point
         
         Parameters:
@@ -94,12 +81,13 @@ Specifying those parameters also reduces the amount of arguments we need to pass
 
 
 ```python
-download_manager.create_elec_consumption_s().plot()
-```
+s_elec_consumption = download_manager.create_elec_consumption_s()
 
+s_elec_consumption.plot()
+```
+  
 ![png](img/sample_elec_consumption.png)
     
-
 <br>
 
 A number of the end-points do not require an API key or additional arguments, these will work even when no parameters are specified during the `DownloadManager` initialisation.
@@ -110,10 +98,6 @@ download_manager = DownloadManager()
 
 download_manager.retrieve_gsps().json()
 ```
-
-
-
-
     {'count': 14,
      'next': None,
      'previous': None,
@@ -131,16 +115,14 @@ download_manager.retrieve_gsps().json()
       {'group_id': '_M'},
       {'group_id': '_N'},
       {'group_id': '_P'}]}
-
-
-
+      
 <br>
 
 For those that do an Exception will be raised detailing why the request was unsuccessful.
 
 
 ```python
-def request_electricity_consumption(download_manager, meter_mpan, meter_serial):
+def request_electricity_consumption(download_manager, meter_mpan=None, meter_serial=None):
     try:
         download_manager.retrieve_electricity_consumption(meter_mpan=meter_mpan, meter_serial=meter_serial)
         print('Successfully retrieved!')
@@ -150,10 +132,8 @@ def request_electricity_consumption(download_manager, meter_mpan, meter_serial):
         
 request_electricity_consumption(download_manager, meter_mpan, meter_serial)
 ```
-
     Authentication credentials were not provided.
-    
-
+   
 <br>
 
 This can easily be remedied by calling the `autheticate` method and passing your api key.
@@ -164,9 +144,29 @@ download_manager.authenticate(octopus_api_key)
 
 request_electricity_consumption(download_manager, meter_mpan, meter_serial)
 ```
-
     Successfully retrieved!
-    
+   
+<br>
+
+A similar event may occur if you provided no parameters when the download manager was initialised, then try to call a function that requires one of those parameters for a default. To assign these parameters we can call a method where assign is used as a prefix, e.g. `download_manager.assign_<parameter_name>(<parameter_value>)`.
+
+
+```python
+download_manager.assign_meter_mpan(meter_mpan)
+download_manager.assign_meter_serial(meter_serial)
+
+s_elec_consumption = download_manager.create_elec_consumption_s()
+
+s_elec_consumption.head()
+```
+
+| interval_start            |   consumption |
+|:--------------------------|--------------:|
+| 2020-10-27 23:00:00+00:00 |         0.008 |
+| 2020-10-27 22:30:00+00:00 |         0.007 |
+| 2020-10-27 22:00:00+00:00 |         0.008 |
+| 2020-10-27 21:30:00+00:00 |         0.008 |
+| 2020-10-27 21:00:00+00:00 |         0.007 |
 
 <br>
 
@@ -178,19 +178,11 @@ Here we'll query the `retrieve_electricity_consumption` end-point and extract th
 
 
 ```python
-from IPython.display import JSON
-
 r = download_manager.retrieve_electricity_consumption(meter_mpan=meter_mpan, meter_serial=meter_serial)
 
-JSON(r.json())
+r.json().keys()
 ```
-
-
-
-
-    <IPython.core.display.JSON object>
-
-
+    dict_keys(['count', 'next', 'previous', 'results'])
 
 <br>
 
@@ -200,22 +192,18 @@ N.b. this will only work for responses which can be converted into a dataframe, 
 
 
 ```python
-s_elec_consumption = oe.api.response_to_data(r)
+s_elec_consumption = oe.api.results_to_df(r.json()['results'])
 
 s_elec_consumption.head()
 ```
 
-
-
-
-    interval_start
-    2020-10-26 00:00:00+00:00    0.442
-    2020-10-19 00:30:00+01:00    3.520
-    2020-10-12 00:00:00+01:00    2.310
-    2020-10-10 00:30:00+01:00    0.392
-    Name: consumption, dtype: float64
-
-
+| interval_start            |   consumption |
+|:--------------------------|--------------:|
+| 2020-10-27 23:00:00+00:00 |         0.008 |
+| 2020-10-27 22:30:00+00:00 |         0.007 |
+| 2020-10-27 22:00:00+00:00 |         0.008 |
+| 2020-10-27 21:30:00+00:00 |         0.008 |
+| 2020-10-27 21:00:00+00:00 |         0.007 |
 
 <br>
 
@@ -228,31 +216,46 @@ end_point = 'retrieve_electricity_consumption'
 end_point_kwargs = {
     'meter_mpan': meter_mpan,
     'meter_serial': meter_serial,
-    'group_by': 'week'
 }
 
 r = download_manager.query_endpoint(end_point, end_point_kwargs)
 
-JSON(r.json())
+r.json().keys()
 ```
 
+    dict_keys(['count', 'next', 'previous', 'results'])
+
+<br>
+
+One of the issues when working with the direct responses is that we have to iterate through the data pages, we can use a helper method called `retrieve_all_results` to do this for us and return the combined results.
 
 
+```python
+results = download_manager.retrieve_all_results(r)
+results_count = len(results)
 
-    <IPython.core.display.JSON object>
+assert results_count == r.json()['count'], "The full dataset was not returned"
 
+print(results_count)
+```
 
+    816
+    
 
 <br>
 
 ### More Complex Requests
 
-
-```python
-
-```
+As well as the required arguments which appear in the end-point function signatures, there are also a number of parameters which can be passed as kwargs to each of them - these are listed in the docstrings. In this example we'll specify a time-period to query electricity consumption between.
 
 
 ```python
+s_elec_consumption = download_manager.create_elec_consumption_s(period_from='2020-10-15T00:00:00Z', 
+                                                                period_to='2020-10-20T00:00:00Z')
 
+s_elec_consumption.plot()
 ```
+
+![png](img/sample_subset_elec_consumption.png)
+    
+

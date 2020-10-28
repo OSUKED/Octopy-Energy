@@ -76,13 +76,9 @@ def add_attr_assignment_func(attribute, DownloadManager):
     
     return
 
-def response_to_data(r, index_col='interval_start', value_cols='consumption', dt_index=True):
-    r_json = r.json()
-    
-    assert 'results' in r_json.keys(), 'No results were returned'
-    
+def results_to_df(results, index_col='interval_start', value_cols='consumption', dt_index=True):
     s = (pd
-         .DataFrame(r_json['results'])
+         .DataFrame(results)
          .set_index(index_col)
          [value_cols]
         )
@@ -116,8 +112,8 @@ class DownloadManager():
         
         Some requests require authentication, in which case the `api_key` 
         should be passed. The `meter_mpan`, `meter_mprn`, and `meter_serial` 
-        can optionally be passed, when they are passed they're use as 
-        defaults in methods like `retrieve_meter_point`.
+        can optionally be passed, when they are they're use as defaults 
+        in methods like `retrieve_meter_point`.
         
         Parameters:
             meter_mpan: Meter point administration number
@@ -132,8 +128,6 @@ class DownloadManager():
             >>> download_manager = DownloadManager(meter_mpan='1012839417444', 
             >>>                                    meter_serial='20L9375357', 
             >>>                                    api_key='kt_live_lihwqe89pw45buioh3bw')
-            >>>
-            >>> s_elec_consumption = download_manager.create_elec_consumption_s()
             
         """
         
@@ -179,7 +173,7 @@ class DownloadManager():
         
         return
         
-    def query_endpoint(self, end_point, end_point_kwargs):
+    def query_endpoint(self, end_point, end_point_kwargs, all_pages=False):
         # Extracting endpoint metadata
         end_point_template = end_points[end_point]['endpoint']
         end_point_available_parameters = end_points[end_point]['parameters']
@@ -203,6 +197,21 @@ class DownloadManager():
         check_API_response(r)
 
         return r
+    
+    def retrieve_all_results(self, r):
+        r_json = r.json()
+        results = []
+
+        if 'next' in r_json.keys():
+            if 'results' in r_json.keys():
+                results += r_json['results']
+
+            if r_json['next'] is not None:
+                next_page_url = r_json['next']
+                r = requests.get(next_page_url, auth=self.auth)
+                results += self.retrieve_all_results(r)
+
+        return results
     
     def check_attribute_is_assigned(self, attribute):
         assert f'{attribute}' in dir(self), f'`{attribute}` has not been assigned'
@@ -240,16 +249,22 @@ class DownloadManager():
         return
     
     def create_elec_consumption_s(self, meter_mpan=None, meter_serial=None, **kwargs):
+        default_kwargs = {'page_size': 25_000}
+        default_kwargs.update(kwargs)
         self.process_required_parameters(['meter_mpan', 'meter_serial'], locals())
-        r = self.retrieve_electricity_consumption(self.meter_mpan, self.meter_serial, **kwargs)
-        s_elec_consumption = response_to_data(r)
+        r = self.retrieve_electricity_consumption(self.meter_mpan, self.meter_serial, **default_kwargs)
+        results = self.retrieve_all_results(r)
+        s_elec_consumption = results_to_df(results)
         
         return s_elec_consumption
     
-    def create_gas_consumption_s(self, **kwargs):
-        self.check_attributes_are_assigned(['meter_mprn', 'meter_serial'])        
-        r = self.retrieve_gas_consumption(self.meter_mprn, self.meter_serial, **kwargs)
-        s_gas_consumption = response_to_data(r)
+    def create_gas_consumption_s(self, meter_mprn=None, meter_serial=None, **kwargs):
+        default_kwargs = {'page_size': 25_000}
+        default_kwargs.update(kwargs)
+        self.check_attributes_are_assigned(['meter_mprn', 'meter_serial'])   
+        r = self.retrieve_gas_consumption(self.meter_mprn, self.meter_serial, **default_kwargs)
+        results = self.retrieve_all_results(r)
+        s_gas_consumption = results_to_df(results)
         
         return s_gas_consumption
     
