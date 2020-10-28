@@ -34,7 +34,6 @@ N.b. we recommend that you store your account details in a `.env` file and then 
 
 
 ```python
-octopus_account = 'your_octopus_account'
 octopus_api_key = 'your_octopus_api_key'
 meter_mpan = 'your_meter_mpan'
 meter_serial = 'your_meter_serial'
