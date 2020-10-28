@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="octopyenergy",
-    version="0.0.1",
+    version="0.0.2",
     author="Ayrton Bourn",
     author_email="ayrtonbourn@outlook.com",
     description="Python client for the Octopus energy API",
