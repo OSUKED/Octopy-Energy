@@ -11,7 +11,7 @@ setuptools.setup(
     description="Python client for the Octopus energy API",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/AyrtonB/Octopy-Energy", 
+    url="https://ayrtonb.github.io/Octopy-Energy", 
     packages=setuptools.find_packages(),
     package_data={'octopyenergy': ['end_points.json']},
     classifiers=[

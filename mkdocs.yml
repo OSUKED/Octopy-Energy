@@ -1,4 +1,4 @@
-site_name: Octopy-Energy Documentation
+site_name: Octopy-Energy
 repo_url: https://github.com/AyrtonB/Octopy-Energy
 repo_name: AyrtonB/Octopy-Energy
 
@@ -11,8 +11,6 @@ theme:
     - navigation.tabs
     - navigation.instant
     - search.suggest
-  palette:
-    primary: black
 
 extra:
   generator: false
@@ -38,6 +36,9 @@ markdown_extensions:
 plugins:
   - search
   - mkdocstrings
+  
+extra_css:
+  - stylesheets/extra.css
       
 extra_javascript:
   - javascripts/config.js
@@ -46,4 +47,6 @@ extra_javascript:
   
 nav:
   - index.md
-  #- library/api.md
+  - Getting-Started.md
+  - API-Layers.md
+  - Advanced-Queries.md
