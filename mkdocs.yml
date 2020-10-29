@@ -46,4 +46,4 @@ extra_javascript:
   
 nav:
   - index.md
-  - library/api.md
+  #- library/api.md
