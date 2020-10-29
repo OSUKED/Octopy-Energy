@@ -14,7 +14,7 @@ from requests.auth import HTTPBasicAuth
 
 
 """
-Defining Global Variables
+Defining Global Variables 
 """
 package_dir = Path(__file__).parent.absolute()
 
