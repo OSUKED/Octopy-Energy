@@ -16,3 +16,6 @@ The library can be installed via pip through the following command:
 ```
     Requirement already satisfied: octopyenergy in c:\users\user\path\to\octopy-energy (0.0.1)
     
+<br>
+
+![svg](img/alt_logo.png){:height="50%" width="50%"}

@@ -4,7 +4,9 @@ repo_name: AyrtonB/Octopy-Energy
 
 theme:
   name: material
+  logo: 'img/logo.png'
   icon:
+    #logo: img/logo
     repo: fontawesome/brands/git-alt
   features:
     - header.autohide
