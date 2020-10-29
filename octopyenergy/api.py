@@ -1,3 +1,5 @@
+from __future__ import absolute_import 
+
 """
 Imports
 """
@@ -11,8 +13,6 @@ from pathlib import Path
 
 import requests
 from requests.auth import HTTPBasicAuth
-
-from __future__ import absolute_import 
 
 
 """
