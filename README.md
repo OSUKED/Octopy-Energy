@@ -1,6 +1,6 @@
 # Octopy-Energy
 
-Python client for the Octopus energy API
+Python client for the Octopus energy API. You can visit the documentation by clicking <a href="ayrtonb.github.io/octopy-energy">here</a>
 
 <br>
 
