@@ -2,7 +2,7 @@
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/AyrtonB/Octopy-Energy/master?urlpath=lab%2Ftree%2Fusage_examples%2F00-Quick-Start.ipynb)
 
-You can also follow along in a live online coding environment thanks to Binder.
+You can follow along in a live online coding environment thanks to Binder.
 
 <br>
 
