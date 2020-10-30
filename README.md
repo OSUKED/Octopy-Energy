@@ -1,5 +1,7 @@
 # Octopy-Energy
 
+![svg](docs/img/alt_logo.png){:height="50%" width="50%"}
+
 Python client for the Octopus energy API. You can visit the documentation by clicking <a href="ayrtonb.github.io/octopy-energy">here</a>
 
 <br>
