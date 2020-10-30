@@ -2,7 +2,9 @@
 
 <img width="300" display="block" margin-left="auto" margin-right="auto" src="docs/img/alt_logo.png">
 
-Python client for the Octopus energy API. You can visit the documentation by clicking <a href="ayrtonb.github.io/octopy-energy">here</a>
+A Python client for the Octopus energy API. 
+
+You can visit the documentation by clicking <a href="ayrtonb.github.io/octopy-energy">here</a>
 
 <br>
 
