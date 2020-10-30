@@ -1,5 +1,7 @@
 # Octopy-Energy
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/AyrtonB/Octopy-Energy/master?urlpath=lab%2Ftree%2Fusage_examples%2F00-Quick-Start.ipynb)
+
 <img width="300" display="block" margin-left="auto" margin-right="auto" src="docs/img/alt_logo.png">
 
 A Python client for the Octopus energy API. 
