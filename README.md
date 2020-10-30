@@ -4,7 +4,7 @@
 
 A Python client for the Octopus energy API. 
 
-You can visit the documentation by clicking <a href="ayrtonb.github.io">here</a>.
+You can visit the documentation by clicking <a href="https://ayrtonb.github.io/Octopy-Energy/">here</a>.
 
 <br>
 
