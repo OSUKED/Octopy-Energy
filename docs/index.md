@@ -13,8 +13,8 @@ The `octopyenergy` library provides a Python client for interfacing with the Oct
 The library can be installed via pip through the following command:
 
 
-```python
-! pip install octopyenergy
+```bash
+pip install octopyenergy
 ```
     Requirement already satisfied: octopyenergy in c:\users\user\path\to\octopy-energy (0.0.1)
     
