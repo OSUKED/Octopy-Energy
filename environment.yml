@@ -15,6 +15,7 @@ dependencies:
   - seaborn
   - matplotlib
   - twine
+  - xarray
   
   # devops/docs
   - python-dotenv

@@ -2,8 +2,8 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,jupyternotebooks,visualstudiocode
 
 ### Custom Ignores
-data
-secrets
+data/**
+secrets/**
 **/.env
 
 ### JupyterNotebooks ###
