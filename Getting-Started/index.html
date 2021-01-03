@@ -1,0 +1,575 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+    
+    
+      
+        <title>Getting Started - Octopy-Energy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3b61ea93.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#getting-started" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+<meta name="google-site-verification" content="_oM0dbXfK-deFEDu4xF-ZsvpWOLeopY6kZxrsDlfdR8" />
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      Getting Started
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../API-Layers/" class="md-tabs__link">
+      API Layers
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../Advanced-Queries/" class="md-tabs__link">
+      Advanced Queries
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Octopy-Energy" class="md-nav__button md-logo" aria-label="Octopy-Energy">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    Octopy-Energy
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/AyrtonB/Octopy-Energy/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AyrtonB/Octopy-Energy
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Getting Started
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Getting Started
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installing-octopy-energy" class="md-nav__link">
+    Installing Octopy-Energy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-inputs" class="md-nav__link">
+    User Inputs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-download-manager" class="md-nav__link">
+    Using the Download Manager
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+
+  <li class="md-nav__item">
+    <a href="../API-Layers/" class="md-nav__link">
+      API Layers
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+
+  <li class="md-nav__item">
+    <a href="../Advanced-Queries/" class="md-nav__link">
+      Advanced Queries
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installing-octopy-energy" class="md-nav__link">
+    Installing Octopy-Energy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-inputs" class="md-nav__link">
+    User Inputs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-download-manager" class="md-nav__link">
+    Using the Download Manager
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/AyrtonB/Octopy-Energy/edit/master/docs/Getting-Started.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
+<p><a href="https://mybinder.org/v2/gh/AyrtonB/Octopy-Energy/master?urlpath=lab%2Ftree%2Fusage_examples%2F00-Quick-Start.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
+<p>You can follow along in a live online coding environment thanks to Binder.</p>
+<p><br></p>
+<h3 id="installing-octopy-energy">Installing Octopy-Energy<a class="headerlink" href="#installing-octopy-energy" title="Permanent link">&para;</a></h3>
+<p>The first step to getting running with the library is to install it through pip.</p>
+<p><div class="highlight"><pre><span></span><code><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">octopyenergy</span>
+</code></pre></div>
+    Requirement already satisfied: octopyenergy in c:\users\user\path\to\octopy-energy (0.0.1)</p>
+<p><br></p>
+<p>Once installed <code>octopyenergy</code> can be imported into your scripts.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">octopyenergy</span> <span class="k">as</span> <span class="nn">oe</span>
+<span class="kn">from</span> <span class="nn">octopyenergy.api</span> <span class="kn">import</span> <span class="n">DownloadManager</span>
+</code></pre></div>
+<p><br></p>
+<h3 id="user-inputs">User Inputs<a class="headerlink" href="#user-inputs" title="Permanent link">&para;</a></h3>
+<p>We now need to assign values for our account/meter details.</p>
+<p>N.b. we recommend that you store your account details in a <code>.env</code> file and then use the <code>dotenv</code> library to set them as environment variables, which can in turn be picked up by <code>os</code> and assigned to local variables.</p>
+<div class="highlight"><pre><span></span><code><span class="n">octopus_api_key</span> <span class="o">=</span> <span class="s1">&#39;your_octopus_api_key&#39;</span>
+<span class="n">meter_mpan</span> <span class="o">=</span> <span class="s1">&#39;your_meter_mpan&#39;</span>
+<span class="n">meter_serial</span> <span class="o">=</span> <span class="s1">&#39;your_meter_serial&#39;</span>
+</code></pre></div>
+<p><br></p>
+<h3 id="using-the-download-manager">Using the Download Manager<a class="headerlink" href="#using-the-download-manager" title="Permanent link">&para;</a></h3>
+<p>We'll start by initialising the <code>DownloadManager</code>, when we do so we can pass a number of parameters which will configure defaults in the download manager. The <code>octopus_api_key</code> is also required for some requests.</p>
+<div class="highlight"><pre><span></span><code><span class="n">download_manager</span> <span class="o">=</span> <span class="n">DownloadManager</span><span class="p">(</span><span class="n">meter_mpan</span><span class="o">=</span><span class="n">meter_mpan</span><span class="p">,</span> 
+                                   <span class="n">meter_serial</span><span class="o">=</span><span class="n">meter_serial</span><span class="p">,</span> 
+                                   <span class="n">api_key</span><span class="o">=</span><span class="n">octopus_api_key</span><span class="p">)</span>
+
+<span class="n">download_manager</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Welcome to the octopyenergy DownloadManager! For more information please read the documentation at https://github.com/AyrtonB/Octopy-Energy.
+
+The following API end-points are available: 
+retrieve_products, retrieve_product, retrieve_tariff_charges, retrieve_meter_point, retrieve_electricity_consumption, retrieve_gas_consumption, retrieve_gsps
+</code></pre></div>
+<p><br></p>
+<p>One of the benefits of specifying these parameters is that they will be used to pre-populate the function docstrings.</p>
+<div class="highlight"><pre><span></span><code><span class="n">help</span><span class="p">(</span><span class="n">download_manager</span><span class="o">.</span><span class="n">retrieve_meter_point</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Help on function retrieve_meter_point:
+
+retrieve_meter_point(meter_mpan=&#39;your_meter_mpan&#39;, **kwargs)
+    Retrieves a meter-point
+
+    Parameters:
+        meter_mpan
+</code></pre></div>
+<p><br></p>
+<p>Specifying those parameters also reduces the amount of arguments we need to pass when making data requests.</p>
+<div class="highlight"><pre><span></span><code><span class="n">s_elec_consumption</span> <span class="o">=</span> <span class="n">download_manager</span><span class="o">.</span><span class="n">create_elec_consumption_s</span><span class="p">()</span>
+
+<span class="n">s_elec_consumption</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</code></pre></div>
+<p><img alt="png" src="../img/sample_elec_consumption.png" /></p>
+<p><br></p>
+<p>A number of the end-points do not require an API key or additional arguments, these will work even when no parameters are specified during the <code>DownloadManager</code> initialisation.</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">download_manager</span> <span class="o">=</span> <span class="n">DownloadManager</span><span class="p">()</span>
+
+<span class="n">download_manager</span><span class="o">.</span><span class="n">retrieve_gsps</span><span class="p">()</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div>
+    {'count': 14,
+     'next': None,
+     'previous': None,
+     'results': [{'group_id': '_A'},
+      {'group_id': '_B'},
+      {'group_id': '_C'},
+      {'group_id': '_D'},
+      {'group_id': '_E'},
+      {'group_id': '_F'},
+      {'group_id': '_G'},
+      {'group_id': '_H'},
+      {'group_id': '_J'},
+      {'group_id': '_K'},
+      {'group_id': '_L'},
+      {'group_id': '_M'},
+      {'group_id': '_N'},
+      {'group_id': '_P'}]}</p>
+<p><br></p>
+<p>For those that do an Exception will be raised detailing why the request was unsuccessful.</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">request_electricity_consumption</span><span class="p">(</span><span class="n">download_manager</span><span class="p">,</span> <span class="n">meter_mpan</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">meter_serial</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">download_manager</span><span class="o">.</span><span class="n">retrieve_electricity_consumption</span><span class="p">(</span><span class="n">meter_mpan</span><span class="o">=</span><span class="n">meter_mpan</span><span class="p">,</span> <span class="n">meter_serial</span><span class="o">=</span><span class="n">meter_serial</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Successfully retrieved!&#39;</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="n">oe</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">SadOctopy</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+
+<span class="n">request_electricity_consumption</span><span class="p">(</span><span class="n">download_manager</span><span class="p">,</span> <span class="n">meter_mpan</span><span class="p">,</span> <span class="n">meter_serial</span><span class="p">)</span>
+</code></pre></div>
+    Authentication credentials were not provided.</p>
+<p><br></p>
+<p>This can easily be remedied by calling the <code>autheticate</code> method and passing your api key.</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">download_manager</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">octopus_api_key</span><span class="p">)</span>
+
+<span class="n">request_electricity_consumption</span><span class="p">(</span><span class="n">download_manager</span><span class="p">,</span> <span class="n">meter_mpan</span><span class="p">,</span> <span class="n">meter_serial</span><span class="p">)</span>
+</code></pre></div>
+    Successfully retrieved!</p>
+<p><br></p>
+<p>A similar event may occur if you provided no parameters when the download manager was initialised, then try to call a function that requires one of those parameters for a default. To assign these parameters we can call a method where assign is used as a prefix, e.g. <code>download_manager.assign_&lt;parameter_name&gt;(&lt;parameter_value&gt;)</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">download_manager</span><span class="o">.</span><span class="n">assign_meter_mpan</span><span class="p">(</span><span class="n">meter_mpan</span><span class="p">)</span>
+<span class="n">download_manager</span><span class="o">.</span><span class="n">assign_meter_serial</span><span class="p">(</span><span class="n">meter_serial</span><span class="p">)</span>
+
+<span class="n">s_elec_consumption</span> <span class="o">=</span> <span class="n">download_manager</span><span class="o">.</span><span class="n">create_elec_consumption_s</span><span class="p">()</span>
+
+<span class="n">s_elec_consumption</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left">interval_start</th>
+<th align="right">consumption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2020-10-27 23:00:00+00:00</td>
+<td align="right">0.008</td>
+</tr>
+<tr>
+<td align="left">2020-10-27 22:30:00+00:00</td>
+<td align="right">0.007</td>
+</tr>
+<tr>
+<td align="left">2020-10-27 22:00:00+00:00</td>
+<td align="right">0.008</td>
+</tr>
+<tr>
+<td align="left">2020-10-27 21:30:00+00:00</td>
+<td align="right">0.008</td>
+</tr>
+<tr>
+<td align="left">2020-10-27 21:00:00+00:00</td>
+<td align="right">0.007</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>Congratulations, you're now ready to get up and running with <code>octopyenergy</code>! </p>
+                
+              
+              
+<script src="https://utteranc.es/client.js"
+        repo="AyrtonB/Octopy-Energy"
+        issue-term="title"
+        label="Comments"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href=".." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../API-Layers/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                API Layers
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.08c56446.min.js"></script>
+      <script src="../assets/javascripts/bundle.6ced434e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ['header.autohide', 'navigation.tabs', 'navigation.instant', 'search.suggest'],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.8c7e0a7e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
